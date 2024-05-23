@@ -1,247 +1,207 @@
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
-
-html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+* {
+  box-sizing: border-box;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+h1 {
+  color: #FBF2C0;
+  font-size: 20px;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+h2 {
+  color: #916F50;
+  font-size: 15px;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
-}
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
+body {
   margin: 0;
   padding: 0;
+  background: #EFEFEF;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
+/* Header Section */
 
-textarea {
-  resize: vertical;
-}
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
+.header-section {
+  grid-area: header;
+  min-height: 50px;
+  margin: 0;
   padding: 0;
+  background: #43281C;
+}
+
+.branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+  padding:10px;
+}
+
+/* Ordering information */
+/* common */
+
+.section-title {
+  grid-area: title;
+  padding: 10px
+}
+
+/*order information */
+
+.amount {
+  grid-area: amount;
+  display: flex;
+  justify-content: left;
+  padding-left: 10px;
+}
+
+.type {
+  display: flex;
+  justify-content: left;
+  grid-area: type;
+}
+
+.price{
+  grid-area: price;
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
+}
+
+.extras{
+  grid-area: extras;
+  font-weight: normal;
+  color: #916F50;
+  list-style-type: none;
+}
+
+.item-information {
+  display: grid;
+  grid-template-areas:
+  "amount type . price"
+  ". extras . .";
+  border-bottom: 1px solid #916F50;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.third-item {
+  border-bottom: none;
+}
+
+/*customer information*/
+
+.information-box {
+  position:relative;
+  display: inline-block;
+  background: #EEE1D5;
+  color: #EEE1D5;
+  padding-top:20px;
+}
+
+.information-input {
+  border-color: #43281C;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.input-label {
+  background: #EEE1D5;
+  color: #916F50;
+  font-size:11px;
   position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+  left:18px;
+  top: 13px;
+  padding: 0 2px;
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
+.cvv.information-input {
+  width:60%;
+}
 
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+  font-weight: bold;
+  background: #EEE1D5;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.card-information {
+  padding: 10px
+}
+
+.information-cards {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px
+}
+
+.order-cards {
+  grid-area: content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 10px;
+  background: #EFEFEF;
+  padding: 30px;
+}
+
+/*Totals*/
+
+.subtotals{
+  grid-area: subtotals;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  min-width: 500px;
+}
+
+.total {
+  font-weight:bold
+}
+
+.checkout {
+  display:grid;
+  grid-template-areas:
+  ". . subtotals .";
+  justify-content: space-around;
+  align-items: center;
+}
+
+.place-order {
+  min-height: 40px;
+  border-radius: 30px;
+  background: #EEE1D5;
+  border-color:#EEE1D5;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  justify-content: space-around;
+  border-radius: 10px;
+  background: #EFEFEF;
   margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+  padding: 20px;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.checkout-page {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
-
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
-}
-
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
-   ========================================================================== */
-
-@media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
-
-  /*
-   * Don't show links that are fragment identifiers,
-   * or use the `javascript:` pseudo protocol
-   */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
-
-  pre {
-    white-space: pre-wrap !important;
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
-
